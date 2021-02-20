@@ -1,6 +1,4 @@
-# Title
+# G
 
-[Wikipedia]()\
-[ source]()
-
-[![alttext](/name.gif)](link)
+[Wikipedia](https://en.wikipedia.org/wiki/Pendulum)\
+[![Pendulum gif](/pendulum.gif)](https://nonvegan.github.io/pendulum)
