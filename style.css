@@ -1,0 +1,83 @@
+    /*Some basic boilerplate css for canvas projects*/
+
+    :root {
+        --fuchsia: #f92672;
+        --light-violet: #ae81ff;
+    }
+
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: #21252b;
+        color: white;
+        font-family: sans-serif;
+    }
+
+    h1 {
+        color: white;
+        text-align: center;
+        font-size: 3rem;
+        margin-bottom: 1.5rem;
+    }
+
+    h1 span {
+        color: #ae81ff
+    }
+
+    canvas {
+        margin: auto;
+        display: block;
+        background-color: #282c34;
+        border: 5px solid #ae81ff;
+        border-radius: 0.5rem;
+    }
+
+    #optionsDiv {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 1rem
+    }
+
+    label {
+        color: white;
+        font-size: 2rem;
+        margin-left: 0.5rem;
+    }
+
+    input,
+    button,
+    select {
+        width: 12rem;
+        height: 3rem;
+        background-color: inherit;
+        color: inherit;
+        margin-right: 0.5vw;
+        margin-left: 0.5vw;
+        border: 5px solid white;
+        border-radius: .75rem;
+        font-size: 1.25rem;
+    }
+
+    option,
+    option div {
+        background-color: #ae81ff;
+        border: 5px solid white;
+    }
+
+    input {
+        -webkit-appearance: none;
+        height: 2.3rem;
+    }
+
+    button:hover,
+    input:hover,
+    select:hover {
+        border-color: #ae81ff;
+        cursor: pointer;
+    }
+
+    button:hover span {
+        color: #ae81ff;
+    }
