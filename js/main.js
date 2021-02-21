@@ -11,7 +11,7 @@ const resetButton = document.getElementById("resetButton");
 const width = window.screen.height / 1.8;
 const height = window.screen.height / 1.8;
 const rodLength = 120;
-const bobMass = 30;
+const bobMass = 40;
 let gravity = getGravitationalValue();
 let pendulum = new Pendulum(new Vector(0, 0), 0, gravity, rodLength, bobMass);
 
@@ -51,7 +51,7 @@ function setup() {
       const mousePos = getMousePosElem(e, -width / 2, -height / 2);
       resetPendulum();
       pendulum.lock();
-      pendulum.l = restrain(mousePos.distance(new Vector(0, 0)), 0, width / 2.5);
+      pendulum.l = restrain(mousePos.distance(new Vector(0, 0)), 0, width / 2.75);
       pendulum.ang = Math.atan(-mousePos.y / mousePos.x);
       if (mousePos.x < 0) pendulum.ang -= Math.PI / 2;
       else pendulum.ang += Math.PI / 2;
