@@ -24,6 +24,7 @@ class Pendulum {
     this.l = l;
     this.m = m;
     this.isLocked = false;
+    this.hasResistance = false;
   }
 
   draw(/** @type {CanvasRenderingContext2D} */ ctx) {
@@ -51,7 +52,7 @@ class Pendulum {
     if (!this.isLocked) {
       this.angA = (Math.sin(this.ang) * -this.g) / this.l;
       this.angV += this.angA;
-      //air resistance  this.angV *= 0.999;
+      if (this.hasResistance) this.angV *= 0.999;
       this.ang += this.angV;
     }
   }

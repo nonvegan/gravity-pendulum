@@ -1,5 +1,5 @@
 import { mapValue, restrain, getMs, getMousePosElem } from "./helpers.js";
-import { Vector, Pendulum }  from "./classes.js";
+import { Vector, Pendulum } from "./classes.js";
 
 const canvas = document.getElementById("canvas");
 /** @type {CanvasRenderingContext2D} */ const ctx = canvas.getContext("2d");
@@ -7,11 +7,11 @@ const optionsDiv = document.getElementById("optionsDiv");
 const gravityLabel = document.getElementById("gravityLabel");
 const gravityRange = document.getElementById("gravityRange");
 const resetButton = document.getElementById("resetButton");
-
+const switchInput = document.getElementById("switchInput");
 const width = window.screen.height / 1.8;
 const height = window.screen.height / 1.8;
-const rodLength = height/5;
-const bobMass = rodLength/5;
+const rodLength = height / 5;
+const bobMass = rodLength / 5;
 let gravity = getGravitationalValue();
 let pendulum = new Pendulum(new Vector(0, 0), 0, gravity, rodLength, bobMass);
 
@@ -75,10 +75,12 @@ function setup() {
       canvas.removeEventListener("mouseup", mouseUpHandler);
     }
   });
+  switchInput.addEventListener("change", () => (pendulum.hasResistance = switchInput.checked));
 }
 
 function resetPendulum() {
   pendulum = new Pendulum(new Vector(0, 0), 0, gravity, rodLength, bobMass);
+  pendulum.hasResistance=switchInput.checked;
 }
 
 function getGravitationalValue() {

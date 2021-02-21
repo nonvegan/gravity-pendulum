@@ -1,5 +1,3 @@
-    /*Some basic boilerplate css for canvas projects*/
-
     :root {
         --fuchsia: #f92672;
         --light-violet: #ae81ff;
@@ -15,7 +13,6 @@
     }
 
     h1 {
-        color: white;
         text-align: center;
         font-size: 3rem;
         margin-bottom: 1.5rem;
@@ -29,7 +26,7 @@
         margin: auto;
         display: block;
         background-color: #282c34;
-        border: 5px solid #ae81ff;
+        border: 0.3rem solid #ae81ff;
         border-radius: 0.5rem;
     }
 
@@ -41,7 +38,6 @@
     }
 
     label {
-        color: white;
         font-size: 2rem;
         margin-left: 0.5rem;
     }
@@ -55,7 +51,7 @@
         color: inherit;
         margin-right: 0.5vw;
         margin-left: 0.5vw;
-        border: 5px solid white;
+        border: 0.3rem solid white;
         border-radius: .75rem;
         font-size: 1.25rem;
     }
@@ -63,21 +59,64 @@
     option,
     option div {
         background-color: #ae81ff;
-        border: 5px solid white;
+        border: 0.3rem solid white;
     }
 
     input {
-        -webkit-appearance: none;
+        appearance: none;
         height: 2.3rem;
     }
 
     button:hover,
     input:hover,
-    select:hover {
+    select:hover,
+    .slider:hover {
         border-color: #ae81ff;
         cursor: pointer;
     }
 
     button:hover span {
         color: #ae81ff;
+    }
+
+    .switch {
+        position: relative;
+        width: 6rem;
+        height: 3rem;
+    }
+
+    .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    .slider {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border: 0.3rem solid white;
+        border-radius: 1.5rem;
+    }
+
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 1.7rem;
+        width: 1.7rem;
+        left: 0.4rem;
+        top: 0.4rem;
+        background-color: white;
+        border-radius: 50%;
+    }
+
+    input:checked+.slider {
+        background-color: #f92672;
+    }
+
+
+    input:checked+.slider:before {
+        transform: translateX(3rem);
     }
