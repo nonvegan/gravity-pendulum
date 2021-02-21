@@ -69,6 +69,7 @@ function setup() {
         )
       ) < pendulum.m
     ) {
+      pendulum.lock();
       canvas.addEventListener("mousemove", mouseMoveHandler);
       canvas.addEventListener("mouseup", mouseUpHandler);
     } else {

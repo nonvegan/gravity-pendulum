@@ -29,6 +29,13 @@ class Pendulum {
 
   draw(/** @type {CanvasRenderingContext2D} */ ctx) {
     ctx.beginPath();
+    ctx.moveTo(this.pos.x, this.pos.y);
+    ctx.lineTo(
+      this.pos.x + Math.sin(this.ang) * (this.l + this.m),
+      this.pos.y + Math.cos(this.ang) * (this.l + this.m)
+    );
+    ctx.stroke();
+    ctx.beginPath();
     ctx.ellipse(
       this.pos.x + Math.sin(this.ang) * (this.l + this.m),
       this.pos.y + Math.cos(this.ang) * (this.l + this.m),
@@ -40,12 +47,13 @@ class Pendulum {
     );
     ctx.fill();
     ctx.beginPath();
-    ctx.moveTo(this.pos.x, this.pos.y);
-    ctx.lineTo(
-      this.pos.x + Math.sin(this.ang) * (this.l + this.m),
-      this.pos.y + Math.cos(this.ang) * (this.l + this.m)
-    );
+    ctx.ellipse(this.pos.x, this.pos.y, ctx.lineWidth, ctx.lineWidth, 0, 0, 2 * Math.PI);
+    ctx.save();
+    ctx.lineWidth = 3;
+    ctx.strokeStyle = "white";
+    ctx.fill();
     ctx.stroke();
+    ctx.restore();
   }
 
   update() {
