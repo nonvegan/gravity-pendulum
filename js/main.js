@@ -29,7 +29,7 @@ function setup() {
   resetButton.addEventListener("click", () => {
     gravityRange.value = 500;
     gravity = getGravitationalValue();
-    switchInput.checked=false;
+    switchInput.checked = false;
     resetPendulum();
   });
   canvas.addEventListener("mousemove", (e) => {
@@ -77,12 +77,12 @@ function setup() {
       canvas.removeEventListener("mouseup", mouseUpHandler);
     }
   });
-  switchInput.addEventListener("change", () => (pendulum.hasResistance = switchInput.checked));
+  switchInput.addEventListener("click", () => (pendulum.hasResistance = switchInput.checked));
 }
 
 function resetPendulum() {
   pendulum = new Pendulum(new Vector(0, 0), 0, gravity, rodLength, bobMass);
-  pendulum.hasResistance=switchInput.checked;
+  pendulum.hasResistance = switchInput.checked;
 }
 
 function getGravitationalValue() {
