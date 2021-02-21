@@ -29,6 +29,7 @@ function setup() {
   resetButton.addEventListener("click", () => {
     gravityRange.value = 500;
     gravity = getGravitationalValue();
+    switchInput.checked=false;
     resetPendulum();
   });
   canvas.addEventListener("mousemove", (e) => {
