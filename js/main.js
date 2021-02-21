@@ -10,8 +10,8 @@ const resetButton = document.getElementById("resetButton");
 
 const width = window.screen.height / 1.8;
 const height = window.screen.height / 1.8;
-const rodLength = 120;
-const bobMass = 40;
+const rodLength = height/5;
+const bobMass = rodLength/5;
 let gravity = getGravitationalValue();
 let pendulum = new Pendulum(new Vector(0, 0), 0, gravity, rodLength, bobMass);
 
@@ -21,7 +21,7 @@ function setup() {
   ctx.translate(width / 2, height / 2);
   ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue("--fuchsia");
   ctx.strokeStyle = getComputedStyle(document.documentElement).getPropertyValue("--fuchsia");
-  ctx.lineWidth = 5;
+  ctx.lineWidth = 7;
   gravityRange.addEventListener("input", () => {
     gravity = parseFloat(gravityRange.value) / 1000;
     pendulum.g = gravity;
