@@ -100,9 +100,12 @@ function update() {
   pendulum.update();
 }
 
-setup();
-setInterval(() => {
+function animate(){
   clear();
   draw();
   update();
-}, getMs(60));
+  requestAnimationFrame(animate);
+}
+
+setup();
+animate();
