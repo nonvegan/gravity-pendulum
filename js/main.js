@@ -1,4 +1,4 @@
-import { mapValue, restrain, getMs, getMousePosElem } from "./helpers.js";
+import { restrain, getMousePosElem } from "./helpers.js";
 import { Vector, Pendulum } from "./classes.js";
 
 const canvas = document.getElementById("canvas");
