@@ -27,7 +27,7 @@ function setup() {
     pendulum.g = gravity;
   });
   resetButton.addEventListener("click", () => {
-    gravityRange.value = 500;
+    gravityRange.value = 250;
     gravity = getGravitationalValue();
     switchInput.checked = false;
     resetPendulum();
